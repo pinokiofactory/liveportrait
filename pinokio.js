@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "2.0",
   title: "LivePortrait",
-  description: "",
+  description: "Bring portraits to life! https://github.com/KwaiVGI/LivePortrait",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
