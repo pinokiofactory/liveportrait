@@ -29,7 +29,7 @@ module.exports = {
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "pip install gradio devicetorch",
-          "pip install -r requirements.txt"
+          "pip install -r {{platform==='darwin' ? 'requirements_macOS.txt' : 'requirements.txt'}}"
         ]
       }
     },
@@ -38,6 +38,22 @@ module.exports = {
       params: {
         venv: "app/env"
       }
-    }
+    },
+    {
+      method: "fs.rm",
+      params: {
+        path: "app/pretrained_weights" 
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        path: "app",
+        message: [
+          "git lfs install",
+          "git clone --depth=1 https://huggingface.co/KwaiVGI/LivePortrait pretrained_weights"
+        ]
+      }
+    },
   ]
 }
