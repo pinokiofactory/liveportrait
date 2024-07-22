@@ -34,6 +34,7 @@ module.exports = {
       }
     },
     {
+      when: "{{platform !== 'linux'}}",
       method: "fs.link",
       params: {
         venv: "app/env"
