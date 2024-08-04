@@ -28,6 +28,7 @@ module.exports = {
         venv: "env",                // Edit this to customize the venv folder path
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
+          "pip install matplotlib==3.9.0",
           "pip install gradio devicetorch",
           "pip install -r {{platform==='darwin' ? 'requirements_macOS.txt' : 'requirements.txt'}}"
         ]
