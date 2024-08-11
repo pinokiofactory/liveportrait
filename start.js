@@ -24,5 +24,14 @@ module.exports = {
         }]
       }
     },
+    {
+      // This step sets the local variable 'url'.
+      // This local variable will be used in pinokio.js to display the "Open WebUI" tab when the value is set.
+      method: "local.set",
+      params: {
+        // the input.event is the regular expression match object from the previous step
+        url: "{{input.event[0]}}"
+      }
+    }
   ]
 }
