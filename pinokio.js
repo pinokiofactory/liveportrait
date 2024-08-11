@@ -56,32 +56,32 @@ module.exports = {
           href: "reset.js",
         }]
       } else {
-        if (kernel.gpu === "nvidia") {
-          return [{
-            icon: "fa-solid fa-power-off",
-            text: "Start Human Mode",
-            href: "start.js",
-          }, {
-            icon: "fa-solid fa-power-off",
-            text: "Start Animal Mode",
-            href: "start.js",
-            params: {
-              mode: "animal"
-            }
-          }, {
-            icon: "fa-solid fa-plug",
-            text: "Update",
-            href: "update.js",
-          }, {
-            icon: "fa-solid fa-plug",
-            text: "Install",
-            href: "install.js",
-          }, {
-            icon: "fa-regular fa-circle-xmark",
-            text: "Reset",
-            href: "reset.js",
-          }]
-        } else {
+//        if (kernel.gpu === "nvidia") {
+//          return [{
+//            icon: "fa-solid fa-power-off",
+//            text: "Start Human Mode",
+//            href: "start.js",
+//          }, {
+//            icon: "fa-solid fa-power-off",
+//            text: "Start Animal Mode",
+//            href: "start.js",
+//            params: {
+//              mode: "animal"
+//            }
+//          }, {
+//            icon: "fa-solid fa-plug",
+//            text: "Update",
+//            href: "update.js",
+//          }, {
+//            icon: "fa-solid fa-plug",
+//            text: "Install",
+//            href: "install.js",
+//          }, {
+//            icon: "fa-regular fa-circle-xmark",
+//            text: "Reset",
+//            href: "reset.js",
+//          }]
+//        } else {
           return [{
             default: true,
             icon: "fa-solid fa-power-off",
@@ -100,7 +100,7 @@ module.exports = {
             text: "Reset",
             href: "reset.js",
           }]
-        }
+//        }
       }
     } else {
       return [{
