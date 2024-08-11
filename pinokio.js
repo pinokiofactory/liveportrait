@@ -105,7 +105,7 @@ module.exports = {
             text: "Reset",
             href: "reset.js",
           }]
-//        }
+        }
       }
     } else {
       return [{
