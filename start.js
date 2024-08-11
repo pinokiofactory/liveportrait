@@ -10,8 +10,7 @@ module.exports = {
         },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "{{platform === 'win32' && args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}",
-          "{{platform !== 'win32' && args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}"
+          "{{args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}"
         ],
         on: [{
           // The regular expression pattern to monitor.
@@ -25,14 +24,5 @@ module.exports = {
         }]
       }
     },
-    {
-      // This step sets the local variable 'url'.
-      // This local variable will be used in pinokio.js to display the "Open WebUI" tab when the value is set.
-      method: "local.set",
-      params: {
-        // the input.event is the regular expression match object from the previous step
-        url: "{{input.event[0]}}"
-      }
-    }
   ]
 }
