@@ -34,6 +34,15 @@ module.exports = {
       }
     },
     {
+      when: "{{gpu === 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        message: "python setup.py build install",
+        path: "app/src/utils/dependencies/XPose/models/UniPose/ops",
+        venv: "{{path.resolve(cwd, 'app/env')}}"
+      }
+    },
+    {
       when: "{{platform !== 'linux'}}",
       method: "fs.link",
       params: {
