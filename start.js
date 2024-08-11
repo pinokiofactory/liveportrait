@@ -11,7 +11,7 @@ module.exports = {
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "{{platform === 'win32' && args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}",
-          "{{platform !== 'win32' ? 'python app.py' : null}}"
+          "{{platform !== 'win32' && args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}"
         ],
         on: [{
           // The regular expression pattern to monitor.
