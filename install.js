@@ -13,6 +13,12 @@ module.exports = {
       params: {
         uri: "common.js"
       }
+    },
+    {
+      method: "log",
+      params: {
+        raw: "Finished"
+      }
     }
   ]
 }
