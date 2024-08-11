@@ -10,7 +10,7 @@ module.exports = {
         },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "{{platform === 'win32' && args && args.mode === 'animal' ? 'python app_animal.py' : 'python app.py'}}",
+          "{{platform === 'win32' && args && args.mode === 'animal' ? 'python app_animals.py' : 'python app.py'}}",
           "{{platform !== 'win32' ? 'python app.py' : null}}"
         ],
         on: [{
