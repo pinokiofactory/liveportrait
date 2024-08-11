@@ -4,13 +4,13 @@ module.exports = {
     {
       method: "shell.run",
       params: {
-        venv: "env",                // Edit this to customize the venv folder path
+        venv: "{{platform === 'win32' ? 'LivePortrait_env' : 'env'}}",                // Edit this to customize the venv folder path
         env: {
           PYTORCH_ENABLE_MPS_FALLBACK: "1"
         },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "{{platform === 'win32' && args && args.mode === 'animal' ? 'run_windows_animal.bat' : 'run_windows_human.bat'}}",
+          "{{platform === 'win32' && args && args.mode === 'animal' ? 'python app_animal.py' : 'python app.py'}}",
           "{{platform !== 'win32' ? 'python app.py' : null}}"
         ],
         on: [{
