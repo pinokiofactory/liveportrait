@@ -5,7 +5,12 @@ module.exports = {
   description: "Bring portraits to life! https://github.com/KwaiVGI/LivePortrait",
   icon: "icon.png",
   menu: async (kernel, info) => {
-    let installed = info.exists("app/env")
+    let installed
+    if (kernel.platform === "win32") {
+      installed = info.exists("app/LivePortrait_env")
+    } else {
+      installed = info.exists("app/env")
+    }
     let running = {
       install: info.running("install.js"),
       start: info.running("start.js"),
@@ -56,32 +61,32 @@ module.exports = {
           href: "reset.js",
         }]
       } else {
-//        if (kernel.gpu === "nvidia") {
-//          return [{
-//            icon: "fa-solid fa-power-off",
-//            text: "Start Human Mode",
-//            href: "start.js",
-//          }, {
-//            icon: "fa-solid fa-power-off",
-//            text: "Start Animal Mode",
-//            href: "start.js",
-//            params: {
-//              mode: "animal"
-//            }
-//          }, {
-//            icon: "fa-solid fa-plug",
-//            text: "Update",
-//            href: "update.js",
-//          }, {
-//            icon: "fa-solid fa-plug",
-//            text: "Install",
-//            href: "install.js",
-//          }, {
-//            icon: "fa-regular fa-circle-xmark",
-//            text: "Reset",
-//            href: "reset.js",
-//          }]
-//        } else {
+        if (kernel.gpu === "nvidia") {
+          return [{
+            icon: "fa-solid fa-power-off",
+            text: "Start Human Mode",
+            href: "start.js",
+          }, {
+            icon: "fa-solid fa-power-off",
+            text: "Start Animal Mode",
+            href: "start.js",
+            params: {
+              mode: "animal"
+            }
+          }, {
+            icon: "fa-solid fa-plug",
+            text: "Update",
+            href: "update.js",
+          }, {
+            icon: "fa-solid fa-plug",
+            text: "Install",
+            href: "install.js",
+          }, {
+            icon: "fa-regular fa-circle-xmark",
+            text: "Reset",
+            href: "reset.js",
+          }]
+        } else {
           return [{
             default: true,
             icon: "fa-solid fa-power-off",
