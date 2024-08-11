@@ -11,13 +11,9 @@ module.exports = {
       message: [
         "conda install -y -c conda-forge 7zip",
         "7z x installer.zip",
-        "move LivePortrait-Windows-v20240806 app"
+        "move LivePortrait-Windows-v20240806 app",
+        "del installer.zip"
       ]
-    }
-  }, {
-    method: "fs.rm",
-    params: {
-      path: "installer.zip"
     }
   }]
 }
