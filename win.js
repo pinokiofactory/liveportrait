@@ -2,7 +2,7 @@ module.exports = {
   run: [{
     method: "fs.download",
     params: {
-      uri: "https://huggingface.co/cleardusk/LivePortrait-Windows/resolve/main/LivePortrait-Windows-v20240806.zip?download=true",
+      uri: "https://huggingface.co/cleardusk/LivePortrait-Windows/resolve/main/LivePortrait-Windows-v20240829.zip?download=true"
       path: "installer.zip"
     }
   }, {
@@ -11,7 +11,7 @@ module.exports = {
       message: [
         "conda install -y -c conda-forge 7zip",
         "7z x installer.zip",
-        "move LivePortrait-Windows-v20240806 app",
+        "move LivePortrait-Windows-v20240829 app",
         "del installer.zip"
       ]
     }
