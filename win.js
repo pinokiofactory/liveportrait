@@ -13,7 +13,7 @@ module.exports = {
       message: [
         "7z x LivePortrait-Windows-v20240829.zip",
         "move LivePortrait-Windows-v20240829 app",
-        "del installer.zip"
+        "del LivePortrait-Windows-v20240829.zip"
       ]
     }
   }]
